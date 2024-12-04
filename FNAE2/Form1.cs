@@ -55,5 +55,12 @@ namespace FNAE2
             this.StartButton.Enabled = false;
             this.StartButton.Visible = false;
         }
+
+        private void OptionsButton_Click(object sender, EventArgs e)
+        {
+            this.BackgroundImage = null; //Replace with a option background
+            this.StartButton.Enabled = false;
+            this.StartButton.Visible = false;
+        }
     }
 }
