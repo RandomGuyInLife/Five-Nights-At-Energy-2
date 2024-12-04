@@ -29,7 +29,61 @@ namespace FNAE2
             if (e.KeyCode == Keys.ShiftKey) {
                 fullscreen(TopMost);
             } else if (e.KeyCode == Keys.Escape) {
-                this.Close();
+                Close();
+            }
+        }
+
+        public void change(String a, String b)
+        {
+            switch (b)
+            {
+                case "Main":
+                    StartButton.Enabled = false;
+                    StartButton.Visible = false;
+                    OptionsButton.Visible = false;
+                    OptionsButton.Enabled = false;
+                    break;
+                case "Game":
+                    //End stuff
+                    break;
+                case "Options":
+                    SettingTitle.Visible = false;
+                    SettingTitle.Enabled = false;
+                    FullscreenLabel.Visible = false;
+                    FullscreenLabel.Enabled = false;
+                    BackLabel.Visible = false;
+                    BackLabel.Enabled = false;
+                    break;
+            }
+            switch (a)
+            {
+                case "Main":
+                    BackgroundImage = Properties.Resources.Menu;
+                    StartButton.Enabled = true;
+                    StartButton.Visible = true;
+                    OptionsButton.Visible = true;
+                    OptionsButton.Enabled = true;
+                    break;
+                case "Game":
+                    //Start stuff
+                    BackgroundImage = null;
+                    break;
+                case "Options":
+                    BackgroundImage = null; //Replace with a option background
+                    SettingTitle.Visible = true;
+                    SettingTitle.Enabled = true;
+                    FullscreenLabel.Visible = true;
+                    FullscreenLabel.Enabled = true;
+                    BackLabel.Visible = true;
+                    BackLabel.Enabled = true;
+                    break;
+                default:
+                    BackgroundImage = Properties.Resources.Menu;
+                    StartButton.Enabled = true;
+                    StartButton.Visible = true;
+                    OptionsButton.Visible = true;
+                    OptionsButton.Enabled = true;
+                    break;
             }
         }
 
@@ -51,16 +105,23 @@ namespace FNAE2
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            this.BackgroundImage = null;
-            this.StartButton.Enabled = false;
-            this.StartButton.Visible = false;
+            change("Game", "Main");
         }
 
         private void OptionsButton_Click(object sender, EventArgs e)
         {
-            this.BackgroundImage = null; //Replace with a option background
-            this.StartButton.Enabled = false;
-            this.StartButton.Visible = false;
+            change("Options", "Main");
+        }
+
+        private void FullscreenLabel_Click(object sender, EventArgs e)
+        {
+            fullscreen(TopMost);
+            FullscreenLabel.Text = "Fullscreen   |   " + TopMost;
+        }
+
+        private void BackLabel_Click(object sender, EventArgs e)
+        {
+            change("Main", "Options");
         }
     }
 }
