@@ -33,6 +33,8 @@
             this.SettingTitle = new System.Windows.Forms.Label();
             this.FullscreenLabel = new System.Windows.Forms.Label();
             this.BackLabel = new System.Windows.Forms.Label();
+            this.MapImage = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.MapImage)).BeginInit();
             this.SuspendLayout();
             // 
             // StartButton
@@ -92,6 +94,16 @@
             this.BackLabel.Visible = false;
             this.BackLabel.Click += new System.EventHandler(this.BackLabel_Click);
             // 
+            // MapImage
+            // 
+            this.MapImage.BackColor = System.Drawing.Color.Transparent;
+            this.MapImage.Location = new System.Drawing.Point(0, 370);
+            this.MapImage.Name = "MapImage";
+            this.MapImage.Size = new System.Drawing.Size(151, 74);
+            this.MapImage.TabIndex = 7;
+            this.MapImage.TabStop = false;
+            this.MapImage.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -99,6 +111,7 @@
             this.BackgroundImage = global::FNAE2.Properties.Resources.Menu;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.MapImage);
             this.Controls.Add(this.BackLabel);
             this.Controls.Add(this.FullscreenLabel);
             this.Controls.Add(this.SettingTitle);
@@ -109,6 +122,7 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            ((System.ComponentModel.ISupportInitialize)(this.MapImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -120,6 +134,7 @@
         private System.Windows.Forms.Label SettingTitle;
         private System.Windows.Forms.Label FullscreenLabel;
         private System.Windows.Forms.Label BackLabel;
+        private System.Windows.Forms.PictureBox MapImage;
     }
 }
 

@@ -45,6 +45,7 @@ namespace FNAE2
                     break;
                 case "Game":
                     //End stuff
+                    MapImage.Visible = false;
                     break;
                 case "Options":
                     SettingTitle.Visible = false;
@@ -67,6 +68,7 @@ namespace FNAE2
                 case "Game":
                     //Start stuff
                     BackgroundImage = null;
+                    MapImage.Visible = true;
                     break;
                 case "Options":
                     BackgroundImage = null; //Replace with a option background
