@@ -51,7 +51,6 @@
             // 
             this.OptionsButton.Location = new System.Drawing.Point(361, 210);
             this.OptionsButton.Margin = new System.Windows.Forms.Padding(2);
-            this.OptionsButton.MinimumSize = new System.Drawing.Size(75, 23);
             this.OptionsButton.Name = "OptionsButton";
             this.OptionsButton.Size = new System.Drawing.Size(75, 23);
             this.OptionsButton.TabIndex = 2;
@@ -97,9 +96,9 @@
             // MapImage
             // 
             this.MapImage.BackColor = System.Drawing.Color.Transparent;
-            this.MapImage.Location = new System.Drawing.Point(0, 370);
+            this.MapImage.Location = new System.Drawing.Point(0, 348);
             this.MapImage.Name = "MapImage";
-            this.MapImage.Size = new System.Drawing.Size(151, 74);
+            this.MapImage.Size = new System.Drawing.Size(151, 96);
             this.MapImage.TabIndex = 7;
             this.MapImage.TabStop = false;
             this.MapImage.Visible = false;
@@ -121,6 +120,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.SizeChanged += new System.EventHandler(this.ResizeEvent);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.MapImage)).EndInit();
             this.ResumeLayout(false);
