@@ -81,6 +81,7 @@ namespace FNAE2
                     BackgroundImage = null; //Replace with a option background
                     SettingTitle.Visible = true;
                     SettingTitle.Enabled = true;
+                    FullscreenLabel.Text = "Fullscreen   |   " + TopMost.ToString();
                     FullscreenLabel.Visible = true;
                     FullscreenLabel.Enabled = true;
                     BackLabel.Visible = true;
@@ -111,6 +112,7 @@ namespace FNAE2
                 WindowState = FormWindowState.Maximized;
                 TopMost = true;
             }
+            FullscreenLabel.Text = "Fullscreen   |   " + TopMost.ToString();
             GeneralResize();
         }
 
@@ -127,10 +129,9 @@ namespace FNAE2
         private void FullscreenLabel_Click(object sender, EventArgs e)
         {
             Fullscreen(TopMost);
-            FullscreenLabel.Text = "Fullscreen   |   " + TopMost.ToString();
         }
 
-        public void GeneralResize()
+        public void GeneralResize() 
         {
             //TODO Make smoother duing fullscreen and non fullscreen transitions
             actualWidth = Bounds.Width;
@@ -143,13 +144,18 @@ namespace FNAE2
             OptionsButton.Size = new Size((int)Math.Round(75 * widthRatio), (int)Math.Round(23 * heightRatio));
             SettingTitle.Location = new Point((int)Math.Round(10 * widthRatio), (int)Math.Round(9 * heightRatio));
             SettingTitle.Size = new Size((int)Math.Round(265 * widthRatio), (int)Math.Round(73 * heightRatio));
-            SettingTitle.Font = new Font("Microsoft Sans Serif", ((float)actualWidth) / ((float)originalWidth), FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            SettingTitle.Font = new Font("Microsoft Sans Serif", 48F * (float)widthRatio, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FullscreenLabel.Location = new Point((int)Math.Round(15*widthRatio), (int)Math.Round(135*heightRatio));
+            FullscreenLabel.Size = new Size((int)Math.Round(97*widthRatio), (int)Math.Round(13*heightRatio));
+            FullscreenLabel.Font = new Font("Microsoft Sans Serif", 7.8F * (float)widthRatio, FontStyle.Regular, GraphicsUnit.Point, 0);
+            BackLabel.Location = new Point((int)Math.Round(713 * widthRatio), (int)Math.Round(394 * heightRatio));
+            BackLabel.Size = new Size((int)Math.Round(32 * widthRatio), (int)Math.Round(13 * heightRatio));
+            BackLabel.Font = new Font("Microsoft Sans Serif", 7.8F * (float)widthRatio, FontStyle.Regular, GraphicsUnit.Point, 0);
         }
 
         private void ResizeEvent(object sender, EventArgs e)
         {
             GeneralResize();
-            Console.WriteLine("Hi!");
         }
 
         private void BackLabel_Click(object sender, EventArgs e)
